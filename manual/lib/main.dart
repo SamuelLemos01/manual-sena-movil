@@ -1,36 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'screens/pantalla_inicio.dart';
+import 'theme/app_theme.dart';
 
 void main() {
-  runApp(const SenaManualApp());
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setSystemUIOverlayStyle(
+    const SystemUiOverlayStyle(
+      statusBarColor: Colors.transparent,
+      statusBarIconBrightness: Brightness.dark,
+    ),
+  );
+  runApp(const MyApp());
 }
 
-class SenaManualApp extends StatelessWidget {
-  const SenaManualApp({Key? key}) : super(key: key);
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Manual SENA',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primaryColor: const Color(0xFF39A900), // Verde SENA
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: const Color(0xFF39A900),
-          secondary: const Color(0xFFFF6600), // Nara
-        ),
-        appBarTheme: const AppBarTheme(
-          backgroundColor: Color(0xFF39A900),
-          foregroundColor: Colors.white,
-        ),
-        elevatedButtonTheme: ElevatedButtonThemeData(
-          style: ElevatedButton.styleFrom(
-            backgroundColor: const Color(0xFF39A900),
-            foregroundColor: Colors.white,
-          ),
-        ),
-      ),
-      home: const SplashScreen(),
+      theme: AppTheme.theme,
+      home: const PantallaInicio(),
     );
   }
 }
