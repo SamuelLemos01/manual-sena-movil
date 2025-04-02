@@ -12,8 +12,8 @@ class PantallaDerechosDeberes extends StatelessWidget {
           title: const Text('Derechos y Deberes'),
           bottom: const TabBar(
             tabs: [
-              Tab(text: 'DERECHOS'),
-              Tab(text: 'DEBERES'),
+              Tab(text: 'Derechos'),
+              Tab(text: 'Deberes'),
             ],
             indicatorColor: Colors.white,
           ),

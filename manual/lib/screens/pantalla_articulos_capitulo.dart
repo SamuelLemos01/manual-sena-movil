@@ -59,7 +59,14 @@ class PantallaArticulosCapitulo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(tituloCapitulo),
+        title: Text(
+          tituloCapitulo,
+          style: const TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.w500,
+          ),
+        ),
+        backgroundColor: const Color(0xFF39A900),
       ),
       body: ListView.builder(
         padding: const EdgeInsets.all(16),

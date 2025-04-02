@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Manual SENA',
+      title: 'Reglamento del Aprendiz SENA',
       debugShowCheckedModeBanner: false,
       theme: AppTheme.theme,
       home: const PantallaInicio(),

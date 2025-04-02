@@ -22,38 +22,45 @@ class PantallaPrincipal extends StatelessWidget {
       {
         'title': 'Derechos y Deberes',
         'icon': Icons.balance,
-        'color': const Color(0xFFFF6600),
+        'color': const Color(0xFF007832),
         'route': const PantallaDerechosDeberes(),
       },
       {
         'title': 'Proceso de Formación',
         'icon': Icons.school,
-        'color': const Color(0xFF1976D2),
+        'color': const Color(0xFF00304D),
         'route': const PantallaProcesoFormacion(),
       },
       {
         'title': 'Etapas de Formación',
         'icon': Icons.stairs,
-        'color': const Color(0xFF9C27B0),
+        'color': const Color(0xFF71277A),
         'route': const PantallaEtapasFormacion(),
       },
       {
         'title': 'Faltas y Sanciones',
         'icon': Icons.warning,
-        'color': const Color(0xFFF44336),
+        'color': const Color(0xFF50E5F9),
         'route': const PantallaFaltasSanciones(),
       },
       {
         'title': 'Preguntas Frecuentes',
         'icon': Icons.help,
-        'color': const Color(0xFF607D8B),
+        'color': const Color(0xFFFDC300),
         'route': const PantallaPreguntasFrecuentes(),
       },
     ];
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Manual SENA'),
+        title: const Text(
+          'Manual SENA',
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        backgroundColor: const Color(0xFF39A900),
       ),
       body: Column(
         children: [
@@ -69,9 +76,9 @@ class PantallaPrincipal extends StatelessWidget {
                 ),
                 const SizedBox(height: 10),
                 const Text(
-                  'Bienvenido al Manual SENA',
+                  'Bienvenido al Reglamento del Aprendiz SENA',
                   style: TextStyle(
-                    fontSize: 18,
+                    fontSize: 16,
                     fontWeight: FontWeight.bold,
                   ),
                 ),

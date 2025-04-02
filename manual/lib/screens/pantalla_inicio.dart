@@ -81,7 +81,7 @@ class _PantallaInicioState extends State<PantallaInicio> with SingleTickerProvid
                         ),
                         const SizedBox(height: 24),
                         const Text(
-                          'Manual del Aprendiz',
+                          'Reglamento del Aprendiz',
                           style: TextStyle(
                             fontSize: 28,
                             fontWeight: FontWeight.bold,

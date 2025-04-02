@@ -8,13 +8,19 @@ class PantallaReglamento extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Reglamento'),
+        title: const Text(
+          'Reglamento',
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.w500,
+          ),
+        ),
+        backgroundColor: const Color(0xFF39A900),
       ),
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
-          
-          _buildCapituloButton(
+          _buildCapituloCard(
             context,
             'CAPÍTULO I',
             'Definiciones',
@@ -38,7 +44,7 @@ class PantallaReglamento extends StatelessWidget {
             ],
           ),
           const SizedBox(height: 16),
-          _buildCapituloButton(
+          _buildCapituloCard(
             context,
             'CAPÍTULO II',
             'Derechos del aprendiz SENA',
@@ -58,7 +64,7 @@ class PantallaReglamento extends StatelessWidget {
             ],
           ),
           const SizedBox(height: 16),
-          _buildCapituloButton(
+          _buildCapituloCard(
             context,
             'CAPÍTULO III',
             'Deberes del aprendiz SENA',
@@ -74,7 +80,7 @@ class PantallaReglamento extends StatelessWidget {
             ],
           ),
           const SizedBox(height: 16),
-          _buildCapituloButton(
+          _buildCapituloCard(
             context,
             'CAPÍTULO IV',
             'Ingreso, permanencia y certificación',
@@ -198,7 +204,7 @@ class PantallaReglamento extends StatelessWidget {
             ],
           ),
           const SizedBox(height: 16),
-          _buildCapituloButton(
+          _buildCapituloCard(
             context,
             'CAPÍTULO V',
             'Régimen de faltas, medidas formativas, diciplinarias y sancionatorias',
@@ -270,14 +276,17 @@ class PantallaReglamento extends StatelessWidget {
     );
   }
 
-  Widget _buildCapituloButton(
+  Widget _buildCapituloCard(
     BuildContext context,
     String titulo,
     String subtitulo,
     List<Map<String, String>> articulos,
   ) {
     return Card(
-      elevation: 4,
+      elevation: 2,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(12),
+      ),
       child: InkWell(
         onTap: () {
           Navigator.push(
@@ -292,24 +301,24 @@ class PantallaReglamento extends StatelessWidget {
           );
         },
         child: Padding(
-          padding: const EdgeInsets.all(16),
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 24),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
                 titulo,
                 style: const TextStyle(
+                  fontSize: 20,
                   fontWeight: FontWeight.bold,
-                  fontSize: 18,
                   color: Color(0xFF39A900),
                 ),
               ),
               const SizedBox(height: 8),
               Text(
                 subtitulo,
-                style: const TextStyle(
+                style: TextStyle(
                   fontSize: 16,
-                  color: Colors.grey,
+                  color: Colors.grey[600],
                 ),
               ),
             ],

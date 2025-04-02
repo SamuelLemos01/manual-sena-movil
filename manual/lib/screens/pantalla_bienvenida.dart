@@ -22,7 +22,7 @@ class PantallaBienvenida extends StatelessWidget {
               ),
               const SizedBox(height: 48),
               Text(
-                'Bienvenido al Manual del Aprendiz SENA',
+                'Bienvenido al Reglamento del Aprendiz SENA',
                 style: Theme.of(context).textTheme.headlineLarge?.copyWith(
                   color: AppTheme.primaryColor,
                   fontWeight: FontWeight.bold,
