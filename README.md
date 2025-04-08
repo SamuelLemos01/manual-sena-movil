@@ -11,7 +11,6 @@ Bienvenido al repositorio de la aplicación **Reglamento del Aprendiz SENA**. Es
 5. [Estructura del Proyecto](#estructura-del-proyecto)
 6. [Pantallas Principales](#pantallas-principales)
 7. [Contribuciones](#contribuciones)
-8. [Licencia](#licencia)
 
 ---
 
