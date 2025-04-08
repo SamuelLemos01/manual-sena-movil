@@ -9,9 +9,19 @@ class PantallaFaltasSanciones extends StatelessWidget {
       length: 3,
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('Faltas y Sanciones'),
-          backgroundColor: const Color(0xFFF44336),
+          title: const Text(
+            'Faltas y Sanciones',
+            style: TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.w500,
+            ),
+          ),
+          backgroundColor: const Color(0xFF2D7F00),
           bottom: const TabBar(
+            labelStyle: TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.w500,
+            ),
             tabs: [
               Tab(text: 'LEVES'),
               Tab(text: 'GRAVES'),
@@ -29,14 +39,17 @@ class PantallaFaltasSanciones extends StatelessWidget {
                 FaltaItem(
                   description: 'Llegar tarde a las actividades formativas sin justificación.',
                   sancion: 'Llamado de atención verbal',
+                  color: Color(0xFF2D7F00),
                 ),
                 FaltaItem(
                   description: 'No portar el uniforme o los elementos de protección personal.',
                   sancion: 'Llamado de atención verbal o escrito',
+                  color: Color(0xFF2D7F00),
                 ),
                 FaltaItem(
                   description: 'Utilizar dispositivos electrónicos no autorizados durante la formación.',
                   sancion: 'Llamado de atención verbal o escrito',
+                  color: Color(0xFF2D7F00),
                 ),
               ],
             ),
@@ -47,14 +60,17 @@ class PantallaFaltasSanciones extends StatelessWidget {
                 FaltaItem(
                   description: 'Presentar evidencias de aprendizaje que no son de su autoría (plagio).',
                   sancion: 'Llamado de atención escrito y plan de mejoramiento',
+                  color: Color(0xFF2D7F00),
                 ),
                 FaltaItem(
                   description: 'Ausentarse injustificadamente de las actividades formativas por más de tres días.',
                   sancion: 'Condicionamiento de matrícula',
+                  color: Color(0xFF2D7F00),
                 ),
                 FaltaItem(
                   description: 'Causar daño intencional a los bienes del SENA.',
                   sancion: 'Condicionamiento de matrícula y reposición del bien',
+                  color: Color(0xFF2D7F00),
                 ),
               ],
             ),
@@ -65,14 +81,17 @@ class PantallaFaltasSanciones extends StatelessWidget {
                 FaltaItem(
                   description: 'Agredir física o verbalmente a cualquier miembro de la comunidad SENA.',
                   sancion: 'Cancelación de matrícula',
+                  color: Color(0xFF2D7F00),
                 ),
                 FaltaItem(
                   description: 'Consumir o distribuir sustancias psicoactivas dentro de las instalaciones del SENA.',
                   sancion: 'Cancelación de matrícula',
+                  color: Color(0xFF2D7F00),
                 ),
                 FaltaItem(
                   description: 'Suplantar identidad o falsificar documentos institucionales.',
                   sancion: 'Cancelación de matrícula',
+                  color: Color(0xFF2D7F00),
                 ),
               ],
             ),
@@ -87,11 +106,13 @@ class PantallaFaltasSanciones extends StatelessWidget {
 class FaltaItem extends StatelessWidget {
   final String description;
   final String sancion;
+  final Color color;
 
   const FaltaItem({
     Key? key,
     required this.description,
     required this.sancion,
+    required this.color,
   }) : super(key: key);
 
   @override
@@ -106,7 +127,7 @@ class FaltaItem extends StatelessWidget {
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Icon(Icons.warning, color: Color(0xFFF44336), size: 20),
+                Icon(Icons.warning, color: color, size: 20),
                 const SizedBox(width: 8),
                 Expanded(
                   child: Text(
@@ -120,15 +141,15 @@ class FaltaItem extends StatelessWidget {
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Icon(Icons.gavel, color: Colors.grey, size: 20),
+                Icon(Icons.gavel, color: color, size: 20),
                 const SizedBox(width: 8),
                 Expanded(
                   child: Text(
                     'Sanción: $sancion',
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontSize: 14,
                       fontWeight: FontWeight.w500,
-                      color: Colors.grey,
+                      color: color,
                     ),
                   ),
                 ),

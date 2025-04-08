@@ -7,35 +7,42 @@ class PantallaPreguntasFrecuentes extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Preguntas Frecuentes'),
-        backgroundColor: const Color(0xFF607D8B),
+        title: const Text(
+          'Preguntas Frecuentes',
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.w500,
+          ),
+        ),
+        backgroundColor: const Color(0xFF39A900),
       ),
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: const [
-          FAQItem(
-            question: '¿Cómo solicito un certificado de estudios?',
-            answer: 'Puedes solicitar tu certificado de estudios a través de la plataforma Sofia Plus, en la sección "Certificados". También puedes acudir personalmente a la oficina de Administración Educativa de tu centro de formación.',
+          PreguntaFrecuenteItem(
+            pregunta: '¿Qué debo hacer si no puedo asistir a una sesión de formación?',
+            respuesta: 'Debes justificar tu inasistencia ante el instructor y coordinador académico, presentando los soportes correspondientes dentro de los tres días hábiles siguientes.',
+            color: Color(0xFF39A900),
           ),
-          FAQItem(
-            question: '¿Qué debo hacer si falto a una jornada de formación?',
-            answer: 'Debes justificar tu inasistencia dentro de los tres días hábiles siguientes, presentando los soportes correspondientes a tu instructor. Recuerda que superar el 20% de inasistencia puede ocasionar la cancelación de tu formación.',
+          PreguntaFrecuenteItem(
+            pregunta: '¿Cómo puedo solicitar un certificado de estudio?',
+            respuesta: 'Puedes solicitarlo a través de la plataforma Sofia Plus o directamente en la oficina de registro y certificación del centro de formación.',
+            color: Color(0xFF39A900),
           ),
-          FAQItem(
-            question: '¿Cómo puedo solicitar un traslado a otro centro de formación?',
-            answer: 'Para solicitar traslado a otro centro de formación, debes presentar una solicitud formal al coordinador académico de tu programa, indicando los motivos del traslado y el centro de destino.',
+          PreguntaFrecuenteItem(
+            pregunta: '¿Qué pasa si repruebo una competencia?',
+            respuesta: 'Tendrás la oportunidad de presentar un plan de mejoramiento. Si aún así no logras aprobar, podrías perder tu condición de aprendiz.',
+            color: Color(0xFF39A900),
           ),
-          FAQItem(
-            question: '¿Cuáles son las alternativas para realizar la etapa productiva?',
-            answer: 'Las alternativas para la etapa productiva incluyen: contrato de aprendizaje, pasantía, proyecto productivo, monitoría, vinculación laboral y apoyo a una unidad productiva familiar.',
+          PreguntaFrecuenteItem(
+            pregunta: '¿Cómo puedo acceder a los beneficios de bienestar al aprendiz?',
+            respuesta: 'Debes estar matriculado en un programa de formación y cumplir con los requisitos específicos de cada beneficio. Consulta con el área de bienestar de tu centro.',
+            color: Color(0xFF39A900),
           ),
-          FAQItem(
-            question: '¿Cómo accedo a los servicios de bienestar al aprendiz?',
-            answer: 'Debes dirigirte a la oficina de Bienestar al Aprendiz de tu centro de formación, donde podrás solicitar información sobre actividades deportivas, culturales, servicio médico, apoyo psicosocial y otros beneficios disponibles.',
-          ),
-          FAQItem(
-            question: '¿Qué hacer si tengo un conflicto con un instructor o compañero?',
-            answer: 'Primero intenta dialogar directamente con la persona involucrada. Si no logras una solución, puedes acudir al vocero de tu grupo, luego al coordinador académico y finalmente al comité de evaluación y seguimiento.',
+          PreguntaFrecuenteItem(
+            pregunta: '¿Puedo cambiar de jornada o de centro de formación?',
+            respuesta: 'Sí, puedes solicitar el traslado justificando los motivos. La aprobación dependerá de la disponibilidad de cupos y el visto bueno de los coordinadores.',
+            color: Color(0xFF39A900),
           ),
         ],
       ),
@@ -43,36 +50,36 @@ class PantallaPreguntasFrecuentes extends StatelessWidget {
   }
 }
 
-// Widget para los ítems de preguntas frecuentes
-class FAQItem extends StatelessWidget {
-  final String question;
-  final String answer;
+class PreguntaFrecuenteItem extends StatelessWidget {
+  final String pregunta;
+  final String respuesta;
+  final Color color;
 
-  const FAQItem({
+  const PreguntaFrecuenteItem({
     Key? key,
-    required this.question,
-    required this.answer,
+    required this.pregunta,
+    required this.respuesta,
+    required this.color,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Card(
       margin: const EdgeInsets.symmetric(vertical: 8),
-      elevation: 2,
       child: ExpansionTile(
         title: Text(
-          question,
-          style: const TextStyle(fontWeight: FontWeight.bold),
+          pregunta,
+          style: TextStyle(
+            color: color,
+            fontWeight: FontWeight.w500,
+          ),
         ),
-        trailing: const Icon(
-          Icons.arrow_drop_down,
-          color: Color(0xFF607D8B),
-        ),
+        leading: Icon(Icons.help_outline, color: color),
         children: [
           Padding(
             padding: const EdgeInsets.all(16),
             child: Text(
-              answer,
+              respuesta,
               style: const TextStyle(fontSize: 14),
             ),
           ),

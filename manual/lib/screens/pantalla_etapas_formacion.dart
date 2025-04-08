@@ -7,8 +7,14 @@ class PantallaEtapasFormacion extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Etapas de Formación'),
-        backgroundColor: const Color(0xFF9C27B0),
+        title: const Text(
+          'Etapas de Formación',
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.w500,
+          ),
+        ),
+        backgroundColor: const Color(0xFF1E5631),
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16),
@@ -21,7 +27,7 @@ class PantallaEtapasFormacion extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
-                  color: Color(0xFF9C27B0),
+                  color: Color(0xFF1E5631),
                 ),
                 textAlign: TextAlign.center,
               ),
@@ -36,19 +42,19 @@ class PantallaEtapasFormacion extends StatelessWidget {
               title: 'Etapa Lectiva',
               description: 'Período durante el cual el aprendiz desarrolla las competencias técnicas y transversales del programa de formación a través de actividades teórico-prácticas.',
               duration: '75% del tiempo total de formación',
-              color: const Color(0xFF9C27B0),
+              color: const Color(0xFF1E5631),
             ),
             EtapaFormacionCard(
               title: 'Etapa Productiva',
               description: 'Período en el que el aprendiz aplica los conocimientos y habilidades adquiridos en un entorno real de trabajo, mediante diversas alternativas como prácticas empresariales, contratos de aprendizaje o proyectos productivos.',
               duration: '25% del tiempo total de formación',
-              color: const Color(0xFF9C27B0),
+              color: const Color(0xFF1E5631),
             ),
             EtapaFormacionCard(
               title: 'Formación Complementaria',
               description: 'Programas adicionales de corta duración que permiten al aprendiz fortalecer competencias específicas según las necesidades del sector productivo.',
               duration: 'Variable según el programa',
-              color: const Color(0xFF9C27B0),
+              color: const Color(0xFF1E5631),
             ),
           ],
         ),

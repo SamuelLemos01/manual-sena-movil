@@ -7,7 +7,14 @@ class PantallaProcesoFormacion extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Proceso de Formación'),
+        title: const Text(
+          'Proceso de Formación',
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.w500,
+          ),
+        ),
+        backgroundColor: const Color(0xFF4BC800),
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16),
@@ -20,7 +27,7 @@ class PantallaProcesoFormacion extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
-                  color: Color(0xFF1976D2),
+                  color: Color(0xFF4BC800),
                 ),
                 textAlign: TextAlign.center,
               ),
@@ -35,21 +42,25 @@ class PantallaProcesoFormacion extends StatelessWidget {
               title: 'Formación Basada en Competencias',
               content: 'Metodología que se enfoca en el desarrollo de competencias laborales específicas requeridas por el sector productivo, garantizando una formación pertinente y de calidad.',
               icon: Icons.school,
+              color: const Color(0xFF4BC800),
             ),
             ProcesoFormacionItem(
               title: 'Formación por Proyectos',
               content: 'Estrategia que integra el aprendizaje a través de proyectos formativos que simulan situaciones reales del entorno laboral, permitiendo aplicar conocimientos en contextos prácticos.',
               icon: Icons.assignment,
+              color: const Color(0xFF4BC800),
             ),
             ProcesoFormacionItem(
               title: 'Evaluación del Aprendizaje',
               content: 'Proceso continuo que valida los conocimientos, habilidades y actitudes adquiridos durante la formación, mediante evidencias de conocimiento, desempeño y producto.',
               icon: Icons.grading,
+              color: const Color(0xFF4BC800),
             ),
             ProcesoFormacionItem(
               title: 'Modalidades de Formación',
               content: 'El SENA ofrece diferentes modalidades: presencial, virtual, a distancia y formación dual, adaptándose a las necesidades de los aprendices y sectores productivos.',
               icon: Icons.devices,
+              color: const Color(0xFF4BC800),
             ),
           ],
         ),
@@ -63,12 +74,14 @@ class ProcesoFormacionItem extends StatelessWidget {
   final String title;
   final String content;
   final IconData icon;
+  final Color color;
 
   const ProcesoFormacionItem({
     Key? key,
     required this.title,
     required this.content,
     required this.icon,
+    required this.color,
   }) : super(key: key);
 
   @override
@@ -87,7 +100,7 @@ class ProcesoFormacionItem extends StatelessWidget {
             children: [
               Row(
                 children: [
-                  Icon(icon, color: const Color(0xFF1976D2)),
+                  Icon(icon, color: color),
                   const SizedBox(width: 10),
                   Expanded(
                     child: Text(

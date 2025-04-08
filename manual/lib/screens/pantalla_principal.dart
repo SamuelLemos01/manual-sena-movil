@@ -11,42 +11,42 @@ class PantallaPrincipal extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Lista de opciones del menú
+    // Lista de opciones del menú con tonalidades verdes del SENA
     final List<Map<String, dynamic>> menuItems = [
       {
         'title': 'Reglamento',
         'icon': Icons.rule_folder,
-        'color': const Color(0xFF39A900),
+        'color': const Color(0xFF39A900), // Verde SENA principal
         'route': const PantallaReglamento(),
       },
       {
         'title': 'Derechos y Deberes',
         'icon': Icons.balance,
-        'color': const Color(0xFF007832),
+        'color': const Color(0xFF2D7F00), // Verde SENA oscuro
         'route': const PantallaDerechosDeberes(),
       },
       {
         'title': 'Proceso de Formación',
         'icon': Icons.school,
-        'color': const Color(0xFF00304D),
+        'color': const Color(0xFF4BC800), // Verde SENA claro
         'route': const PantallaProcesoFormacion(),
       },
       {
         'title': 'Etapas de Formación',
         'icon': Icons.stairs,
-        'color': const Color(0xFF71277A),
+        'color': const Color(0xFF1E5631), // Verde SENA muy oscuro
         'route': const PantallaEtapasFormacion(),
       },
       {
         'title': 'Faltas y Sanciones',
         'icon': Icons.warning,
-        'color': const Color(0xFF50E5F9),
+        'color': const Color(0xFF2D7F00), // Verde SENA oscuro
         'route': const PantallaFaltasSanciones(),
       },
       {
         'title': 'Preguntas Frecuentes',
         'icon': Icons.help,
-        'color': const Color(0xFFFDC300),
+        'color': const Color(0xFF39A900), // Verde SENA principal
         'route': const PantallaPreguntasFrecuentes(),
       },
     ];
@@ -54,39 +54,41 @@ class PantallaPrincipal extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'Manual SENA',
+          'Reglamento del Aprendiz SENA',
           style: TextStyle(
             color: Colors.white,
-            fontWeight: FontWeight.bold,
+            fontWeight: FontWeight.w500,
           ),
         ),
         backgroundColor: const Color(0xFF39A900),
       ),
-      body: Column(
-        children: [
-          Container(
-            width: double.infinity,
-            padding: const EdgeInsets.all(16),
-            color: Colors.grey[100],
-            child: Column(
-              children: [
-                Image.asset(
-                  'assets/images/logo_sena.png',
-                  height: 70,
-                ),
-                const SizedBox(height: 10),
-                const Text(
-                  'Bienvenido al Reglamento del Aprendiz SENA',
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Container(
+              width: double.infinity,
+              padding: const EdgeInsets.all(16),
+              color: Colors.grey[100],
+              child: Column(
+                children: [
+                  Image.asset(
+                    'assets/images/logo_sena.png',
+                    height: 70,
                   ),
-                ),
-              ],
+                  const SizedBox(height: 10),
+                  const Text(
+                    'Bienvenido al Reglamento del Aprendiz SENA',
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ],
+              ),
             ),
-          ),
-          Expanded(
-            child: GridView.builder(
+            GridView.builder(
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
               padding: const EdgeInsets.all(16),
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
@@ -111,8 +113,19 @@ class PantallaPrincipal extends StatelessWidget {
                 );
               },
             ),
-          ),
-        ],
+            const SizedBox(height: 16),
+            const Text(
+              'Desarrollado por:\nMoises Cartagena Arteaga, Instructor lider\nJimmy Alexander Lombana, Instructor\nDiego Samuel Lemos, Aprendiz\nFicha: ADSO 2741663',
+              style: TextStyle(
+                fontSize: 12,
+                color: Colors.grey,
+                fontStyle: FontStyle.italic,
+              ),
+              textAlign: TextAlign.center,
+            ),
+            const SizedBox(height: 8),
+          ],
+        ),
       ),
     );
   }
