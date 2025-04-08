@@ -56,23 +56,7 @@ Sigue estos pasos para descargar e implementar el proyecto:
    flutter run
 
 ## Estructura del proyecto
-manual/
-├── lib/
-│   ├── [main.dart](http://_vscodecontentref_/0)                # Punto de entrada de la aplicación
-│   ├── screens/                 # Pantallas principales de la app
-│   │   ├── [pantalla_inicio.dart](http://_vscodecontentref_/1)
-│   │   ├── [pantalla_bienvenida.dart](http://_vscodecontentref_/2)
-│   │   ├── [pantalla_principal.dart](http://_vscodecontentref_/3)
-│   │   ├── [pantalla_reglamento.dart](http://_vscodecontentref_/4)
-│   │   └── ...
-│   ├── theme/                   # Temas y estilos de la app
-│   │   └── app_theme.dart
-│   └── assets/                  # Recursos como imágenes y logos
-│       └── images/
-├── android/                     # Configuración específica para Android
-├── ios/                         # Configuración específica para iOS
-├── web/                         # Configuración específica para Web
-└── ...
+![image](https://github.com/user-attachments/assets/97ac9011-2e93-4fe2-a32e-0381d22d4e8b)
 
 ## Pantallas Principales
 1. Pantalla de Inicio
